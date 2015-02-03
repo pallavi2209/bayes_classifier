@@ -1,0 +1,45 @@
+Steps to run Part-1 of homework-1:
+1. Merge training files using mergeTraining.py (submitted). Execute the command in following format:
+python3 mergeTraining.py [training_folder] [training_file]
+
+Example for SPAM dataset:
+ python3 mergeTraining.py SPAM_training/ spamTraining
+
+Example for SENTIMENT dataset:
+ python3 mergeTraining.py SENTIMENT_training/ sentTraining
+
+
+
+2. Learn classification model from the training data file using nblearn.py (submitted). Execute the command in following format:
+python3 nblearn.py [training_file] [model_file]
+
+Note: [model_file] will be a binary file
+Example for SPAM dataset:
+ python3 nblearn.py spamTraining spam.nb
+
+Example for SPAM dataset:
+ python3 nblearn.py sentTraining sentiment.nb
+
+
+
+
+3. Merge test files using mergeTestData.py (submitted). Execute the command in following format:
+python3 mergeTestData.py [test_folder] [test_file]
+
+Example for SPAM dataset:
+ python3 mergeTestData.py SPAM_test/ spamTest
+
+Example for SPAM dataset:
+ python3 mergeTestData.py SENTIMENT_test/ sentTest
+
+
+
+
+4. Classify test file using nbclassify.py (submitted). Execute the command in following format:
+python3 nbclassify.py [model_file] [test_file] > [output_file]
+
+Example for SPAM dataset:
+ python3 nbclassify.py spam.nb spamTest > spam.out
+
+Example for SPAM dataset:
+ python3 nbclassify.py sentiment.nb sentTest > sentiment.out
