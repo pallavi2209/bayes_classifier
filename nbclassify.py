@@ -31,13 +31,14 @@ def main():
         if key in pDict:
           pKey=pDict[key][k]
         else:
-          pKey=pDict["unknownUNK"][k]
+          pKey=pDict["<unknownUNK>"][k]
         pDoc=pDoc+pKey
      # print(str(maxProb)+"compared with "+ str(pDoc))
       if maxProb<pDoc:
         maxProb=pDoc
         maxPClass=k
     print(maxPClass)
-
+  testFile.close()
+  outFile.close()
 if __name__=="__main__":
   main()

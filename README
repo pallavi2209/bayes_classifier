@@ -23,14 +23,14 @@ Example for SPAM dataset:
 
 
 
-3. Merge test files using mergeTestData.py (submitted). Execute the command in following format:
-python3 mergeTestData.py [test_folder] [test_file]
+3. Merge test files using mergeTraining.py (submitted). Execute the command in following format:
+python3 mergeTraining.py [test_folder] [test_file]
 
 Example for SPAM dataset:
- python3 mergeTestData.py SPAM_test/ spamTest
+ python3 mergeTraining.py SPAM_test/ spamTest
 
 Example for SPAM dataset:
- python3 mergeTestData.py SENTIMENT_test/ sentTest
+ python3 mergeTraining.py SENTIMENT_test/ sentTest
 
 
 

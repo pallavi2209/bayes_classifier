@@ -30,7 +30,7 @@ def main():
       else:
         cDict[key]=1
     mainDict[strClass]=cDict,cntClass,cntTokens
-  uniqW.add("unknownUNK")
+  uniqW.add("<unknownUNK>")
   totUniqW=len(uniqW)
   totClsCnt=0;
   for x,y,z in mainDict.values():
