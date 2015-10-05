@@ -1,11 +1,35 @@
 
-Relevant information about solution to part 1 and part 2:
-Part 1: Naive Bayes
-1. How to run has been explained in README (submitted). Code to merge training and test files has been submitted as mergeTraining.py
-2. spam.nb and sentiment.nb are binary files.
-3. To divide the sentiment data, I randomly picked around 25% files from training set and separated them to use as development set. This resulted in 75% files to train and 25% files to dev test.
 
-Part2: Svm light
+###Naive Bayes Classification
+Create your own text classifier and applied it to two datasets corresponding to two tasks: (1) spam filtering, and (2) sentiment analysis. In part I you I write a Naive Bayes classifier and apply it to the two datasets. In part II I use off-the-shelf classifiers with the same datasets.
+
+
+
+The training dataset consists of the following two files:
+
+1. HAM.1.txt
+subject : meeting today
+hi , could we have a meeting today .
+thank you .
+2. SPAM.1.txt
+subject : low rates
+click here to apply for new low rates
+do not miss this chance !
+
+######Classifying new text
+Once I created a model file (spam.nb or sentiment.nb), I used the model to
+classify new documents. Given a file formatted as follows:
+FEATURE_11 FEATURE_12 ... FEATURE_1N
+FEATURE_21 FEATURE_22 ... FEATURE_2N
+...
+FEATURE_M1 FEATURE_M2 ... FEATURE_MN
+where each line contains the features corresponding to one document, my program
+wrote to STDOUT the same number of lines, and each line contained exactly
+one string: the predicted label for the corresponding document.
+
+To divide the sentiment data, I randomly picked around 25% files from training set and separated them to use as development set. This resulted in 75% files to train and 25% files to dev test.
+
+Svm light
 1. Created a dictionary of unique words in training set and assigned ids to them.
 2. Created input file by writing a python code. Format of input file is as follows:
 +1 feature1:value1 feature2:value2 featureN: valueN
@@ -13,16 +37,15 @@ where feature: token IDs in ascending order.
       value: tfIdf of the token.
       +1/-1: for classes.
 
-Part2: Megam
+Megam
 1. Created a dictionary of unique words in training set and assigned ids to them.
 2. Created input file by writing a python code. Format of input file is as follows:
-1 feature1 value1 feature2 value2 featureN valueN
+      1 feature1 value1 feature2 value2 featureN valueN
 where feature: token IDs in ascending order.
       value: tfIdf of the token.
       0/1: for classes.
 I used binary as a parameter to learn and classify the data.
 
-Answers to questions:
 1) Precision, recall and F-score on the development data for my classifier in part I for each label:
 Naive Bayes results for SPAM-HAM data set:
 Precision-SPAM:0.9569,  Recall-SPAM:0.9779,  F-score-SPAM:0.9673
@@ -84,8 +107,6 @@ MEGAM SENTIMENT data set:
 
 Overall Result: With 10% training data, mostly, the values for precision, recall and F-score decreased as compared to the results with 100% training data. But, I notice that the values in case of naive bayes decreased much more as compared to SVM and Megam. Megam performed best with 10% data.
 
-Reason: The values decrease because of overfitting of the sparse training data. Less training data is not the true representation of the world of inputs and hence the model treats the unknown values in test data equaly likely which decreases the precision, recall and F-score.
-Also, naive bayes performance decreases drastically as the training data decreases because it is simple algorithm based on token probablities, while SVM and megam are complex algorithms which can perform considerably well in sparse training also. So, the difference in performance between naive bayes and SVM/Megam decreases as the training data increases. Hence, more the training data, better the expected results.
 
 
 
